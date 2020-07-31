@@ -2,7 +2,7 @@
   "name": "user-activity",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rishijay.github.io/user-activity/users",
+  "homepage": "https://rishijay.user-activity.github.io/users",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
