@@ -16,5 +16,5 @@ moment, history, react-router-dom, bootstrap
 ## Improvements (to do) in next update
 Implementation of redux
 
-
-
+## Process to run
+Download/Clone Repo -> npm install -> npm start
