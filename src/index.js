@@ -13,7 +13,7 @@ const hist = createBrowserHistory();
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-      <Route exact={true} path="/user-activity/users" render={props => <App {...props} />} />
+      <Route exact path="/user-activity/users" render={props => <App {...props} />} />
       <Route  path="/user-activity/calendar" render={props => <CalenderView {...props} />} />
       <Redirect to="/user-activity/users" />
     </Switch>
