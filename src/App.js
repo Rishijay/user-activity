@@ -123,7 +123,7 @@ class App extends Component {
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" 
-                href={"/calendar?user="+this.state.selectedUserId} 
+                href={"/user-activity/calendar?user="+this.state.selectedUserId} 
                 onClick={()=>this.setState({showActivity : false})}>
                   <i class="fa fa-calendar" aria-hidden="true" style={{marginRight: 10}}></i>
                   Show in calendar</Button>{' '}
