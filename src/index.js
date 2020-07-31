@@ -16,9 +16,9 @@ ReactDOM.render(
   // </React.StrictMode>
   <Router history={hist}>
     <Switch>
-      <Route exact={true} path="/users" render={props => <App {...props} />} />
-      <Route  path="/calendar" render={props => <CalenderView {...props} />} />
-      <Redirect to="/users" />
+      <Route exact={true} path="/user-activity/users" render={props => <App {...props} />} />
+      <Route  path="/user-activity/calendar" render={props => <CalenderView {...props} />} />
+      <Redirect to="/user-activity/users" />
       {/* <Redirect to="/admin/dashboard" /> */}
     </Switch>
   </Router>,

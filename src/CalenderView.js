@@ -83,7 +83,7 @@ class CalenderView extends Component {
               </h5>
             </Col>
             <Col classname="text-right" >
-              <Button classname="text-right" color="primary" href="/users" style={{float:'right', textAlign:'center'}}> 
+              <Button classname="text-right" color="primary" href="/user-activity/users" style={{float:'right', textAlign:'center'}}> 
               {"<< " + " Go To Users List"} 
               </Button>
             </Col>
