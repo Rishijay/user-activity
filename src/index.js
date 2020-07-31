@@ -11,15 +11,11 @@ import CalenderView from './CalenderView'
 const hist = createBrowserHistory();
 
 ReactDOM.render(
-  // <React.StrictMode>
-  //   <App />
-  // </React.StrictMode>
   <Router history={hist}>
     <Switch>
       <Route exact={true} path="/user-activity/users" render={props => <App {...props} />} />
       <Route  path="/user-activity/calendar" render={props => <CalenderView {...props} />} />
-      <Redirect to="/user-activity/users" />
-      {/* <Redirect to="/admin/dashboard" /> */}
+      <Redirect from="/user-activity" to="/user-activity/users" />
     </Switch>
   </Router>,
   document.getElementById('root')
