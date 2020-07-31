@@ -1,13 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createBrowserHistory } from "history";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import CalenderView from './CalenderView'
+
+const hist = createBrowserHistory();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>
+  <Router history={hist}>
+    <Switch>
+      <Route exact={true} path="/users" render={props => <App {...props} />} />
+      <Route  path="/calendar" render={props => <CalenderView {...props} />} />
+      <Redirect to="/users" />
+      {/* <Redirect to="/admin/dashboard" /> */}
+    </Switch>
+  </Router>,
   document.getElementById('root')
 );
 
