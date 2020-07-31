@@ -22,9 +22,6 @@ class App extends Component {
     this.members = [];
   }
 
-  componentWillMount(){
-    alert('hey')
-  }
   componentDidMount() {
     this.callMockAPI()
   }
