@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import PageNavbar from './PageNavbar';
-import { Button, Card, CardHeader, CardBody, Modal, ModalHeader, ModalBody, Table, ModalFooter } from "reactstrap";
+import { Button, Card, CardHeader, CardBody, Modal, ModalHeader, ModalBody, Table, ModalFooter, Spinner } from "reactstrap";
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import axios from 'axios';
 
@@ -13,6 +13,7 @@ class App extends Component {
       userTableRows : [],
       activityTableRows : [],
       showActivity : false,
+      loadingTable : false,
       selectedUserId : null,
       selectedUserName : null,
     }
@@ -21,13 +22,18 @@ class App extends Component {
     this.members = [];
   }
 
+  componentWillMount(){
+    alert('hey')
+  }
   componentDidMount() {
     this.callMockAPI()
   }
 
   callMockAPI=()=>{
+    this.setState({loadingTable : true})
     axios.get('https://run.mocky.io/v3/d3a41cbc-a56f-4ba9-9817-4e419803f395')
     .then((response) => {
+      this.setState({loadingTable : false})
       if(response.data.ok){
         this.members = response.data.members
         this.createUserTableContent(response.data.members)
@@ -123,7 +129,7 @@ class App extends Component {
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" 
-                href={"/user-activity/calendar?user="+this.state.selectedUserId} 
+                href={"/calendar?user="+this.state.selectedUserId} 
                 onClick={()=>this.setState({showActivity : false})}>
                   <i class="fa fa-calendar" aria-hidden="true" style={{marginRight: 10}}></i>
                   Show in calendar</Button>{' '}
@@ -140,6 +146,7 @@ class App extends Component {
             Users List</h5>
             </CardHeader>
             <CardBody>
+              {!this.state.loadingTable ?
             <Table responsive >
                     <thead className="text-primary">
                       <tr>
@@ -189,7 +196,7 @@ class App extends Component {
                         );
                       })}
                     </tbody>
-                  </Table>
+                  </Table> : <h5 classname="text-center" style={{margin: 20}}><Spinner type="grow" color="primary" style={{ marginRight: 10 }} />Loading..Please Wait...</h5>}
             </CardBody>
           </Card>
         </header>

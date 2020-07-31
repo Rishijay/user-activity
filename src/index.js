@@ -13,9 +13,9 @@ const hist = createBrowserHistory();
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-      <Route exact path="/user-activity/users" render={props => <App {...props} />} />
-      <Route  path="/user-activity/calendar" render={props => <CalenderView {...props} />} />
-      <Redirect to="/user-activity/users" />
+      <Route exact={true} path="/users" render={props => <App {...props} />} />
+      <Route  path="/calendar" render={props => <CalenderView {...props} />} />
+      <Redirect to="/users" />
     </Switch>
   </Router>,
   document.getElementById('root')
