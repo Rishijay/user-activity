@@ -13,8 +13,8 @@ https://run.mocky.io/v3/d3a41cbc-a56f-4ba9-9817-4e419803f395 (GET)
 ## Additional/Support yet Important Libraries
 moment, history, react-router-dom, bootstrap
 
-## Improvements can be in next update
+## Process to run
+Download/Clone Repo -> npm install -> npm start
+
+## Improvements (to do) in next update
 Implementation of redux
-
-
-
